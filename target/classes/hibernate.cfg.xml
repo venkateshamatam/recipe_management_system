@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection properties -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/recipe_db?createDatabaseIfNotExist=true</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">qwqw1212</property>
+
+        <!-- Hibernate properties -->
+        <property name="show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Session context configuration -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Mapping files -->
+        <mapping class="com.esd.recipe.model.User"/>
+        <mapping class="com.esd.recipe.model.Recipe"/>
+        <mapping class="com.esd.recipe.model.Ingredient"/>
+        <mapping class="com.esd.recipe.model.Rating"/>
+        <mapping class="com.esd.recipe.model.Category"/>
+
+
+    </session-factory>
+</hibernate-configuration>
